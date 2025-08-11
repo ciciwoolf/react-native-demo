@@ -1,50 +1,59 @@
-# Welcome to your Expo app 👋
+# React Native Exploration Project
 
-This is an [Expo](https://expo.dev) project created with [`create-expo-app`](https://www.npmjs.com/package/create-expo-app).
+This repository showcases my exploration and learning journey with React Native development using the Expo framework. Built with modern React Native practices, this project demonstrates cross-platform mobile application development capabilities.
 
-## Get started
+## Technology Stack
 
-1. Install dependencies
+- **React Native** with Expo
+- **TypeScript** for type safety
+- **File-based routing** with Expo Router
+- **ESLint** for code quality
+
+## Getting Started
+
+### Prerequisites
+
+- Node.js (latest LTS version recommended)
+- npm or yarn package manager
+
+### Installation & Setup
+
+1. **Install dependencies**
 
    ```bash
    npm install
    ```
 
-2. Start the app
+2. **Start the development server**
 
    ```bash
    npx expo start
    ```
 
-In the output, you'll find options to open the app in a
+3. **Run the application**
 
-- [development build](https://docs.expo.dev/develop/development-builds/introduction/)
-- [Android emulator](https://docs.expo.dev/workflow/android-studio-emulator/)
-- [iOS simulator](https://docs.expo.dev/workflow/ios-simulator/)
-- [Expo Go](https://expo.dev/go), a limited sandbox for trying out app development with Expo
+   Choose your preferred platform:
 
-You can start developing by editing the files inside the **app** directory. This project uses [file-based routing](https://docs.expo.dev/router/introduction).
+   - **iOS Simulator** (requires Xcode on macOS)
+   - **Android Emulator** (requires Android Studio)
+   - **Expo Go** mobile app for quick testing
+   - **Web browser** for web development
 
-## Get a fresh project
+## Project Structure
 
-When you're ready, run:
+The application uses Expo Router's file-based routing system. Core application logic is organized within the `app/` directory, with reusable components in the `components/` folder.
 
-```bash
-npm run reset-project
-```
+## Development Notes
 
-This command will move the starter code to the **app-example** directory and create a blank **app** directory where you can start developing.
+This project serves as a practical exploration of React Native development patterns, including:
 
-## Learn more
+- Cross-platform component design
+- Navigation implementation
+- TypeScript integration
+- Modern React hooks and patterns
 
-To learn more about developing your project with Expo, look at the following resources:
+## Resources
 
-- [Expo documentation](https://docs.expo.dev/): Learn fundamentals, or go into advanced topics with our [guides](https://docs.expo.dev/guides).
-- [Learn Expo tutorial](https://docs.expo.dev/tutorial/introduction/): Follow a step-by-step tutorial where you'll create a project that runs on Android, iOS, and the web.
-
-## Join the community
-
-Join our community of developers creating universal apps.
-
-- [Expo on GitHub](https://github.com/expo/expo): View our open source platform and contribute.
-- [Discord community](https://chat.expo.dev): Chat with Expo users and ask questions.
+- [Expo Documentation](https://docs.expo.dev/)
+- [React Native Documentation](https://reactnative.dev/)
+- [TypeScript Documentation](https://www.typescriptlang.org/)
