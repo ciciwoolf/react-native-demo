@@ -1,4 +1,4 @@
-# React Native Exploration Project
+# React Native Project
 
 This repository showcases my exploration and learning journey with React Native development using the Expo framework. Built with modern React Native practices, this project demonstrates cross-platform mobile application development capabilities.
 
