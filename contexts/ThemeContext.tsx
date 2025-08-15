@@ -6,7 +6,7 @@ import React, {
   ReactNode,
 } from 'react';
 import AsyncStorage from '@react-native-async-storage/async-storage';
-import { Colors } from '../constants/Colors';
+import { Colors } from '../constants/theme';
 
 // Define what theme modes we support
 type Theme = 'light' | 'dark';
@@ -15,7 +15,7 @@ type Theme = 'light' | 'dark';
 interface ThemeContextType {
   theme: Theme; // Current theme: 'light' or 'dark'
   colors: typeof Colors.light; // Current color palette
-  toggleTheme: () => void; 
+  toggleTheme: () => void;
   isDark: boolean; // Helper: true if current theme is dark
 }
 

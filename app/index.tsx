@@ -8,7 +8,9 @@ import {
   StyleSheet,
   SafeAreaView,
 } from 'react-native';
-import { Colors, spacing, typography, borderRadius } from '../constants/Colors';
+import Ionicons from '@expo/vector-icons/Ionicons';
+import { spacing, typography, borderRadius } from '../constants/theme';
+import { useTheme } from '../contexts/ThemeContext';
 
 interface Task {
   id: number;
@@ -17,6 +19,7 @@ interface Task {
 }
 
 export default function HomeScreen() {
+  const { colors, toggleTheme, isDark } = useTheme();
   const [tasks, setTasks] = useState<Task[]>([]);
   const [inputText, setInputText] = useState('');
   const [nextId, setNextId] = useState(1);
@@ -57,16 +60,23 @@ export default function HomeScreen() {
   );
 
   // useMemo here so that styles are created on first render and not every render after
-  const styles = useMemo(() => createStyles(Colors.light), []);
+  const styles = useMemo(() => createStyles(colors), [colors]);
 
   return (
     <SafeAreaView style={styles.container}>
       <View style={styles.header}>
         <Text style={styles.title}>My Tasks</Text>
-        <Text style={styles.subtitle}>
-          {completedCount} of {tasks.length} completed
-        </Text>
+        <TouchableOpacity onPress={toggleTheme} style={{ marginLeft: 10 }}>
+          <Ionicons
+            name={isDark ? 'moon' : 'sunny'}
+            size={24}
+            color={colors.text}
+          />
+        </TouchableOpacity>
       </View>
+      <Text style={styles.subtitle}>
+        {completedCount} of {tasks.length} completed
+      </Text>
 
       <View style={styles.inputContainer}>
         <TextInput
@@ -74,7 +84,7 @@ export default function HomeScreen() {
           value={inputText}
           onChangeText={setInputText}
           placeholder="Enter a new task..."
-          placeholderTextColor={Colors.light.textMuted}
+          placeholderTextColor={colors.textMuted}
           onSubmitEditing={addTask}
         />
         <TouchableOpacity style={styles.addButton} onPress={addTask}>
@@ -128,6 +138,9 @@ const createStyles = (colors: any) =>
       backgroundColor: colors.background,
     },
     header: {
+      flexDirection: 'row',
+      alignItems: 'center',
+      justifyContent: 'space-between',
       paddingHorizontal: spacing.lg,
       paddingVertical: spacing.lg,
       borderBottomWidth: 1,
@@ -141,6 +154,8 @@ const createStyles = (colors: any) =>
       ...typography.subtitle,
       color: colors.textSecondary,
       marginTop: spacing.xs,
+      paddingHorizontal: spacing.lg,
+      paddingVertical: spacing.sm,
     },
     inputContainer: {
       flexDirection: 'row',
